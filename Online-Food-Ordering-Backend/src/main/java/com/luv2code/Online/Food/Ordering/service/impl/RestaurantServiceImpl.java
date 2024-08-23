@@ -9,11 +9,9 @@ import com.luv2code.Online.Food.Ordering.repository.RestaurantRepository;
 import com.luv2code.Online.Food.Ordering.repository.UserRepository;
 import com.luv2code.Online.Food.Ordering.request.CreateRestaurantRequest;
 import com.luv2code.Online.Food.Ordering.service.RestaurantService;
-import com.luv2code.Online.Food.Ordering.service.UserService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
