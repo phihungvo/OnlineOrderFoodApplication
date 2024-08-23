@@ -31,12 +31,12 @@ public class AppConfig {
                         .anyRequest().permitAll()
                 ).addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
                 .csrf(AbstractHttpConfigurer::disable)
-                .cors(cors->cors.configurationSource(corsConfigrationSource()));
+                .cors(cors->cors.configurationSource(corsConfigurationSource()));
 
         return http.build();
     }
 
-    private CorsConfigurationSource corsConfigrationSource() {
+    private CorsConfigurationSource corsConfigurationSource() {
         return new CorsConfigurationSource() {
             @Override
             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {

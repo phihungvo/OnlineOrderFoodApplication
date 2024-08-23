@@ -22,9 +22,7 @@ public class UserServiceImpl implements UserService {
 
         String email = jwtProvider.getEmailFromJwtToken(token);
 
-        User user = findUserByEmail(email);
-
-        return user;
+        return findUserByEmail(email);
     }
 
     @Override
