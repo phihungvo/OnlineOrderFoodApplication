@@ -19,7 +19,7 @@ public interface RestaurantService {
 
     public List<Restaurant> searchRestaurant(String keyword);
 
-    public Restaurant findRestaurantById(Long restaurantId) throws Exception;
+    public Restaurant findRestaurantById(Long restaurantId);
 
     public Restaurant getRestaurantByUserId(Long userId) throws Exception;
 
