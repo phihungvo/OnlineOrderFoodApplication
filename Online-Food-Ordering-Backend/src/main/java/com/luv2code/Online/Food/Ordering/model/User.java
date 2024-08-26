@@ -3,6 +3,7 @@ package com.luv2code.Online.Food.Ordering.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.luv2code.Online.Food.Ordering.dto.RestaurantDto;
+import com.luv2code.Online.Food.Ordering.enums.USER_ROLE;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

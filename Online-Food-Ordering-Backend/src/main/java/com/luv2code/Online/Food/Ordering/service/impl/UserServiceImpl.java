@@ -1,7 +1,6 @@
 package com.luv2code.Online.Food.Ordering.service.impl;
 
 import com.luv2code.Online.Food.Ordering.config.JwtProvider;
-import com.luv2code.Online.Food.Ordering.model.USER_ROLE;
 import com.luv2code.Online.Food.Ordering.model.User;
 import com.luv2code.Online.Food.Ordering.repository.UserRepository;
 import com.luv2code.Online.Food.Ordering.service.UserService;

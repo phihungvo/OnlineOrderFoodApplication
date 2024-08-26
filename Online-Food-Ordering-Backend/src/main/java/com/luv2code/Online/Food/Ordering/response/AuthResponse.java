@@ -1,6 +1,6 @@
 package com.luv2code.Online.Food.Ordering.response;
 
-import com.luv2code.Online.Food.Ordering.model.USER_ROLE;
+import com.luv2code.Online.Food.Ordering.enums.USER_ROLE;
 import lombok.Data;
 
 @Data

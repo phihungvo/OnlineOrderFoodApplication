@@ -1,6 +1,6 @@
 package com.luv2code.Online.Food.Ordering.service;
 
-import com.luv2code.Online.Food.Ordering.model.USER_ROLE;
+import com.luv2code.Online.Food.Ordering.enums.USER_ROLE;
 import com.luv2code.Online.Food.Ordering.model.User;
 import com.luv2code.Online.Food.Ordering.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

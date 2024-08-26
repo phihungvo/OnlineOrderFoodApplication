@@ -2,7 +2,7 @@ package com.luv2code.Online.Food.Ordering.controller;
 
 import com.luv2code.Online.Food.Ordering.config.JwtProvider;
 import com.luv2code.Online.Food.Ordering.model.Cart;
-import com.luv2code.Online.Food.Ordering.model.USER_ROLE;
+import com.luv2code.Online.Food.Ordering.enums.USER_ROLE;
 import com.luv2code.Online.Food.Ordering.model.User;
 import com.luv2code.Online.Food.Ordering.repository.CartRepository;
 import com.luv2code.Online.Food.Ordering.repository.UserRepository;
