@@ -1,5 +1,7 @@
 package com.luv2code.Online.Food.Ordering.service.impl;
 
+import com.luv2code.Online.Food.Ordering.exception.AppException;
+import com.luv2code.Online.Food.Ordering.exception.ErrorCode;
 import com.luv2code.Online.Food.Ordering.model.IngredientCategory;
 import com.luv2code.Online.Food.Ordering.model.IngredientsItem;
 import com.luv2code.Online.Food.Ordering.model.Restaurant;
@@ -43,7 +45,7 @@ public class IngredientServiceImpl implements IngredientsService {
         Optional<IngredientCategory> opt = ingredientCategoryRepository.findById(id);
 
         if(opt.isEmpty())
-            throw new Exception("Ingredient category not found...");
+            throw new AppException(ErrorCode.INGREDIENT_NOT_FOUND);
 
         return opt.get();
     }
@@ -80,7 +82,7 @@ public class IngredientServiceImpl implements IngredientsService {
         Optional<IngredientsItem> optionalIngredientsItem = ingredientItemRepository.findById(id);
 
         if(optionalIngredientsItem.isEmpty()){
-            throw new Exception("Ingredient not found...");
+            throw new AppException(ErrorCode.INGREDIENT_NOT_FOUND);
         }
         IngredientsItem ingredientsItem = optionalIngredientsItem.get();
         ingredientsItem.setInStoke(!ingredientsItem.isInStoke());

@@ -1,5 +1,7 @@
 package com.luv2code.Online.Food.Ordering.service.impl;
 
+import com.luv2code.Online.Food.Ordering.exception.AppException;
+import com.luv2code.Online.Food.Ordering.exception.ErrorCode;
 import com.luv2code.Online.Food.Ordering.model.Cart;
 import com.luv2code.Online.Food.Ordering.model.CartItem;
 import com.luv2code.Online.Food.Ordering.model.Food;
@@ -68,7 +70,7 @@ public class CartServiceImpl implements CartService {
         Optional<CartItem> cartItem = cartItemRepository.findById(cartItemId);
 
         if(cartItem.isEmpty())
-            throw new Exception("Cart item not found");
+            throw new AppException(ErrorCode.CART_ITEM_NOT_FOUND);
 
         CartItem item = cartItem.get();
         item.setQuantity(quantity);
@@ -87,7 +89,7 @@ public class CartServiceImpl implements CartService {
         Optional<CartItem> cartItem = cartItemRepository.findById(cartItemId);
 
         if(cartItem.isEmpty())
-            throw new Exception("Cart item not found");
+            throw new AppException(ErrorCode.CART_ITEM_NOT_FOUND);
 
         CartItem item = cartItem.get();
 
@@ -114,7 +116,7 @@ public class CartServiceImpl implements CartService {
         Optional<Cart> optionalCart = cartRepository.findById(id);
 
         if(optionalCart.isEmpty())
-            throw new Exception("Cart not found with id : "+ id);
+            throw new AppException(ErrorCode.CART_ITEM_NOT_FOUND);
 
         return optionalCart.get();
     }

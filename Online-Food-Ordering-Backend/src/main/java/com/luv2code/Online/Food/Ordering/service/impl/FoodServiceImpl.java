@@ -1,5 +1,7 @@
 package com.luv2code.Online.Food.Ordering.service.impl;
 
+import com.luv2code.Online.Food.Ordering.exception.AppException;
+import com.luv2code.Online.Food.Ordering.exception.ErrorCode;
 import com.luv2code.Online.Food.Ordering.model.Category;
 import com.luv2code.Online.Food.Ordering.model.Food;
 import com.luv2code.Online.Food.Ordering.model.Restaurant;
@@ -105,7 +107,7 @@ public class FoodServiceImpl implements FoodService {
         Optional<Food> optionalFood = foodRepository.findById(foodId);
 
         if(optionalFood.isEmpty())
-            throw new Exception("Food not exist.....");
+            throw new AppException(ErrorCode.FOOD_NOT_FOUND);
 
         return optionalFood.get();
     }

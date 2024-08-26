@@ -1,6 +1,8 @@
 package com.luv2code.Online.Food.Ordering.service.impl;
 
 import com.luv2code.Online.Food.Ordering.config.JwtProvider;
+import com.luv2code.Online.Food.Ordering.exception.ErrorCode;
+import com.luv2code.Online.Food.Ordering.exception.UserException;
 import com.luv2code.Online.Food.Ordering.model.User;
 import com.luv2code.Online.Food.Ordering.repository.UserRepository;
 import com.luv2code.Online.Food.Ordering.service.UserService;
@@ -29,7 +31,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByEmail(email);
 
         if(user == null){
-            throw new Exception("User not found");
+            throw new UserException(ErrorCode.USER_NOT_FOUND);
         }
 
         return user;

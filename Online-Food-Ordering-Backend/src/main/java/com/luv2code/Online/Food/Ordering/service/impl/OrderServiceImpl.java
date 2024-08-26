@@ -1,6 +1,8 @@
 package com.luv2code.Online.Food.Ordering.service.impl;
 
 import com.luv2code.Online.Food.Ordering.enums.OrderStatus;
+import com.luv2code.Online.Food.Ordering.exception.AppException;
+import com.luv2code.Online.Food.Ordering.exception.ErrorCode;
 import com.luv2code.Online.Food.Ordering.model.*;
 import com.luv2code.Online.Food.Ordering.repository.*;
 import com.luv2code.Online.Food.Ordering.request.OrderRequest;
@@ -96,7 +98,7 @@ public class OrderServiceImpl implements OrderService {
             order.setOrderStatus(orderStatus);
             return orderRepository.save(order);
         }
-        throw new Exception("Please select a valid order status");
+        throw new AppException(ErrorCode.UPDATE_ORDER_EXCEPTION);
 
     }
 
@@ -128,7 +130,7 @@ public class OrderServiceImpl implements OrderService {
         Optional<Order> optionalOrder = orderRepository.findById(orderId);
 
         if(optionalOrder.isEmpty())
-            throw new Exception("Order not found...");
+            throw new AppException(ErrorCode.ORDER_NOT_FOUND);
 
         return optionalOrder.get();
     }

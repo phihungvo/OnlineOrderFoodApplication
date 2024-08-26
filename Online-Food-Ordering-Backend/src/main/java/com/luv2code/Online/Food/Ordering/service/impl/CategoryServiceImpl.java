@@ -1,5 +1,7 @@
 package com.luv2code.Online.Food.Ordering.service.impl;
 
+import com.luv2code.Online.Food.Ordering.exception.AppException;
+import com.luv2code.Online.Food.Ordering.exception.ErrorCode;
 import com.luv2code.Online.Food.Ordering.model.Category;
 import com.luv2code.Online.Food.Ordering.model.Restaurant;
 import com.luv2code.Online.Food.Ordering.repository.CategoryRepository;
@@ -44,7 +46,7 @@ public class CategoryServiceImpl implements CategoryService {
         Optional<Category> optionalCategory = categoryRepository.findById(categoryId);
 
         if(optionalCategory.isEmpty()){
-            throw new RuntimeException("Category not found....");
+            throw new AppException(ErrorCode.CATEGORY_NOT_FOUND);
         }
 
         return optionalCategory.get();
